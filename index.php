@@ -1,18 +1,13 @@
 <?php
-    require_once 'date.php';
-	$date = new Date('2025-12-31');
+	require_once 'interal.php';
+	$date1 = new Date('2025-12-31');
+	$date2 = new Date('2026-11-28');
 	
-	echo $date->getYear().'<br>';  // выведет '2025'
-	echo $date->getMonth().'<br>'; // выведет '12'
-	echo $date->getDay().'<br>';   // выведет '31'
+	$interval = new Interval($date1, $date2);
 	
-	echo $date->getWeekDay().'<br>';     // выведет '3'
-	echo $date->getWeekDay('ru').'<br>'; // выведет 'среда'
-	echo $date->getWeekDay('en').'<br>'; // выведет 'wednesday'
-
-	echo (new Date('2025-12-31'))->addYear(1).'<br>'; // '2026-12-31'
-	echo (new Date('2025-12-31'))->addDay(1).'<br>';  // '2026-01-01'
+	echo $interval->toDays();   // выведет разницу в днях
+	// echo $interval->toMonths(); // выведет разницу в месяцах
+	// echo $interval->toYears();  // выведет разницу в годах
 	
-	echo (new Date('2025-12-31'))->subDay(3)->addYear(1); // '2026-12-28'
-	
+	// var_dump($interval); // массив вида ['years' => '', 'months' => '', 'days' => '']
 ?>
