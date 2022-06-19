@@ -2,7 +2,7 @@
 	class Tag
 	{
 		private $name;
-		private $attrs = []; // изначально пустой массив
+		private $attrs = []; 
         private $rem; 
 		
 		public function __construct($name)
@@ -10,11 +10,11 @@
 			$this->name = $name;
 		}
 		
-		// Реализуем метод для атрибутов:
+		
 		public function setAttr($name, $value)
 		{
 			$this->attrs[$name] = $value;
-			return $this; // возвращаем $this чтобы была цепочка
+			return $this; 
 		}
 		
 		public function open()
@@ -37,11 +37,11 @@
 				$result = '';
 				
 				foreach ($attrs as $name => $value) {
-					// Если значение атрибута равно true:
+					
 					if ($value === true) {
-						$result .= " $name"; // это атрибут без значения
+						$result .= " $name"; 
 					} else {
-						$result .= " $name=\"$value\""; // это атрибут со значением
+						$result .= " $name=\"$value\""; 
 					}
 				}
 				
@@ -59,6 +59,22 @@
 		foreach ($attrs as $name => $value) {
 			$this->setAttr($name, $value);
 		}
+		return $this;
+	}
+
+	public function addClass($className)
+	{
+		if (isset($this->attrs['class'])) {
+			$classNames = explode(' ', $this->attrs['class']);
+			
+			if (!in_array($className, $classNames)) {
+				
+				$classNames[] = $className;
+				
+				$this->attrs['class'] = implode(' ', $classNames);
+			}
+		}
+		
 		return $this;
 	}
 	}
