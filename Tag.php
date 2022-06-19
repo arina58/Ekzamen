@@ -103,6 +103,9 @@
 	public function getName(){
 		return $this->name;
 	}
+	public function getText(){
+		return $this->text;
+	}
 	
 	}
 ?>
