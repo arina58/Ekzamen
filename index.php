@@ -1,9 +1,14 @@
 <?php
 	require_once 'Tag.php';
-	$tag = new Tag('input');
-	
-	echo $tag
+	echo (new Tag('input'))
+		->setAttr('name', 'name1')
 		->setAttr('id', 'test')
-		->setAttr('disabled', true) // создаем атрибут без значения
-		->open(); // выведет <input id="test" disabled>
+		->setAttr('class', 'eee bbb')
+		->open();
+
+	echo (new Tag('input'))
+		->setAttr('name', 'name2')
+		->setAttr('id', 'test')
+		->setAttr('class', 'eee bbb')
+		->open();
 ?> 
