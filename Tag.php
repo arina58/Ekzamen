@@ -49,5 +49,12 @@
             unset($this->attrs[$rem]);
 			return $this;	
         }
+
+		public function setAttrs($attrs){
+		foreach ($attrs as $name => $value) {
+			$this->setAttr($name, $value);
+		}
+		return $this;
+	}
 	}
 ?>
