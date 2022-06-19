@@ -1,3 +1,4 @@
 <?php
-    echo 'page 1';
+    echo 'page 1'. '<br>';
+    include_once 'menu.php';
 ?>
