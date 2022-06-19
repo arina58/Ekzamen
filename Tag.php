@@ -99,5 +99,10 @@
 		
 		return $this;
 	}
+
+	public function getName(){
+		return $this->name;
+	}
+	
 	}
 ?>
