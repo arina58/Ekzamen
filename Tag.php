@@ -109,6 +109,12 @@
 	public function getAttrs(){
 		return $this->attrs;
 	}
-	
+	public function getAttr($attr){
+		if (isset($this->attrs[$attr])){
+		return $this->attrs[$attr];
+	} else {
+		return null;
+	}
+	}
 	}
 ?>
