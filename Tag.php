@@ -37,7 +37,12 @@
 				$result = '';
 				
 				foreach ($attrs as $name => $value) {
-					$result .= " $name=\"$value\"";
+					// Если значение атрибута равно true:
+					if ($value === true) {
+						$result .= " $name"; // это атрибут без значения
+					} else {
+						$result .= " $name=\"$value\""; // это атрибут со значением
+					}
 				}
 				
 				return $result;
